@@ -43,6 +43,10 @@ module.exports = {
       screens: {
         xd: "420px",
       },
+      fontFamily: {
+        inter: ["var(--font-inter)"],
+        "space-grotesk": ["var(--font-space-grotesk)"],
+      },
     },
   },
   plugins: [],
