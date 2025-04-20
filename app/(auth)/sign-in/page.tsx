@@ -13,7 +13,7 @@ const SignIn = () => {
         email: "",
         password: "",
       }}
-      onsSubmit={(data) => Promise.resolve({ success: true, data })}
+      onSubmit={(data) => Promise.resolve({ success: true, data })}
     />
   );
 };

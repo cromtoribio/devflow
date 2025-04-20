@@ -15,7 +15,7 @@ const SignUp = () => {
         name: "",
         username: "",
       }}
-      onsSubmit={(data) => Promise.resolve({ success: true, data })}
+      onSubmit={(data) => Promise.resolve({ success: true, data })}
     />
   );
 };
