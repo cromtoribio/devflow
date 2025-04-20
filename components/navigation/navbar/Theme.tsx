@@ -1,3 +1,5 @@
+// Theme Switcher Component
+
 "use client";
 
 import * as React from "react";
