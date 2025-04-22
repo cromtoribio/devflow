@@ -1,8 +1,10 @@
 import { auth, signOut } from "@/auth";
+import QuestionCard from "@/components/cards/QuestionCard";
 import HomeFilter from "@/components/filters/HomeFilter";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
+import image from "next/image";
 import Link from "next/link";
 import { title } from "process";
 
@@ -17,6 +19,8 @@ const questions = [
     author: {
       _id: "1",
       name: "John Doe",
+      image:
+        "https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small/man-with-beard-avatar-character-isolated-icon-free-vector.jpg",
     },
     upvotes: 10,
     answers: 5,
@@ -30,6 +34,8 @@ const questions = [
     author: {
       _id: "1",
       name: "John Doe",
+      image:
+        "https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small/man-with-beard-avatar-character-isolated-icon-free-vector.jpg",
     },
     upvotes: 10,
     answers: 5,
@@ -63,7 +69,7 @@ const Home = async ({ searchParams }: SearchParams) => {
           asChild
           className="primary-gradient min-h-[46px] px-4 py-3 !text-light-900"
         >
-          <Link href={ROUTES.ASK_QUESTION}>Ask Question</Link>
+          <Link href={ROUTES.ASK_QUESTION}>Ask a Question</Link>
         </Button>
       </section>
       <section className="mt-11">
@@ -75,9 +81,12 @@ const Home = async ({ searchParams }: SearchParams) => {
         />
       </section>
       <HomeFilter />
-      <div className="=mt-10 flex w-full flex-col gap-6">
+      <div className="mt-10 flex w-full flex-col gap-6">
         {filteredQuestions.map((question) => (
-          <h1 key={question._id}>{question.title}</h1>
+          <QuestionCard
+            key={question._id}
+            question={question}
+          />
         ))}
       </div>
     </>
